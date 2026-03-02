@@ -60,5 +60,10 @@ class DummyData {
         ),
       ],
     ),
+    PhraseSet(
+      id: 'set-3',
+      setName: 'Empty set',
+      phrases: []
+    )
   ];
 }
