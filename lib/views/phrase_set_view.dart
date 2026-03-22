@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:phrase_app/data/phrase.dart';
+import 'package:phrase_app/views/add_phrase_view.dart';
 
 class PhraseSetView extends StatefulWidget {
   final PhraseSet phraseSet;
@@ -208,10 +209,21 @@ class _PhraseSetViewState extends State<PhraseSetView> {
                       ),
                     );
                   },
-                )
+                ),
           ),
         ],
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          await Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AddPhraseView(phraseSetId: widget.phraseSet.id),
+            ),
+          );
+        },
+        child: const Icon(Icons.add)
+      ),
     );
   }
 }
